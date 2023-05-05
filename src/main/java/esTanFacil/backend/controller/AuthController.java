@@ -1,16 +1,16 @@
 package esTanFacil.backend.controller;
 
-import com.example.inkrhyme.model.ERole;
-import com.example.inkrhyme.model.Role;
-import com.example.inkrhyme.model.User;
-import com.example.inkrhyme.payload.request.LoginRequest;
-import com.example.inkrhyme.payload.request.SignupRequest;
-import com.example.inkrhyme.payload.response.JwtResponse;
-import com.example.inkrhyme.payload.response.MessageResponse;
-import com.example.inkrhyme.repositories.RoleRepository;
-import com.example.inkrhyme.repositories.UserRepository;
-import com.example.inkrhyme.security.jwt.JwtUtils;
-import com.example.inkrhyme.security.services.UserDetailsImpl;
+import com.esTanFacil.backend.model.ERole;
+import com.esTanFacil.backend.model.Role;
+import com.esTanFacil.backend.model.User;
+import com.esTanFacil.backend.payload.request.LoginRequest;
+import com.esTanFacil.backend.payload.request.SignupRequest;
+import com.esTanFacil.backend.payload.response.JwtResponse;
+import com.esTanFacil.backend.payload.response.MessageResponse;
+import com.esTanFacil.backend.repositories.RoleRepository;
+import com.esTanFacil.backend.repositories.UserRepository;
+import com.esTanFacil.backend.security.jwt.JwtUtils;
+import com.esTanFacil.backend.security.services.UserDetailsImpl;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
