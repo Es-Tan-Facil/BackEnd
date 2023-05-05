@@ -1,16 +1,16 @@
 package esTanFacil.backend.controller;
 
-import com.esTanFacil.backend.model.ERole;
-import com.esTanFacil.backend.model.Role;
-import com.esTanFacil.backend.model.User;
-import com.esTanFacil.backend.payload.request.LoginRequest;
-import com.esTanFacil.backend.payload.request.SignupRequest;
-import com.esTanFacil.backend.payload.response.JwtResponse;
-import com.esTanFacil.backend.payload.response.MessageResponse;
-import com.esTanFacil.backend.repositories.RoleRepository;
-import com.esTanFacil.backend.repositories.UserRepository;
-import com.esTanFacil.backend.security.jwt.JwtUtils;
-import com.esTanFacil.backend.security.services.UserDetailsImpl;
+import esTanFacil.backend.model.ERole;
+import esTanFacil.backend.model.Role;
+import esTanFacil.backend.model.User;
+import esTanFacil.backend.payload.request.LoginRequest;
+import esTanFacil.backend.payload.request.SignupRequest;
+import esTanFacil.backend.payload.response.JwtResponse;
+import esTanFacil.backend.payload.response.MessageResponse;
+import esTanFacil.backend.repositories.RoleRepository;
+import esTanFacil.backend.repositories.UserRepository;
+import esTanFacil.backend.security.jwt.JwtUtils;
+import esTanFacil.backend.security.services.UserDetailsImpl;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
