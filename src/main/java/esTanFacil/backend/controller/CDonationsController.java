@@ -8,13 +8,15 @@ import jakarta.persistence.EntityNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
 import java.util.Optional;
 
 
 @RestController
-@RequestMapping("/api/donations")
+@CrossOrigin("*")
+@RequestMapping("/api/v1/donations")
 public class CDonationsController {
 
     @Autowired
@@ -27,6 +29,7 @@ public class CDonationsController {
     }
 
     @GetMapping("/{id}")
+    @PreAuthorize("hasRole('ADMIN')")
     public ResponseEntity<CDonations> getDonationById(@PathVariable(value = "id") Long id) {
         Optional<CDonations> donation = donationService.getDonationById(id);
         if (donation.isPresent()) {
@@ -37,12 +40,14 @@ public class CDonationsController {
     }
 
     @PostMapping("")
+    @PreAuthorize("hasRole('ADMIN')")
     public ResponseEntity<CDonations> createDonation(@RequestBody CDonations donation) {
         CDonations createdDonation = donationService.createDonation(donation);
         return new ResponseEntity<>(createdDonation, HttpStatus.CREATED);
     }
 
     @PutMapping("/{id}")
+    @PreAuthorize("hasRole('ADMIN')")
     public ResponseEntity<CDonations> updateDonation(@PathVariable(value = "id") Long id, @RequestBody CDonations donation) {
         CDonations updatedDonation = donationService.updateDonation(id, donation);
         if (updatedDonation != null) {
@@ -53,6 +58,7 @@ public class CDonationsController {
     }
 
     @DeleteMapping("/{id}")
+    @PreAuthorize("hasRole('ADMIN')")
     public ResponseEntity<Void> deleteDonation(@PathVariable(value = "id") Long id) {
         try {
             donationService.deleteDonation(id);
@@ -62,12 +68,14 @@ public class CDonationsController {
         }
     }
 
-    @GetMapping("/total-km-donated")
+    @GetMapping("/totalKm")
+    @PreAuthorize("hasRole('ADMIN')")
     public int getTotalKmDonated() {
         return donationService.getTotalKmDonated();
     }
 
     @PutMapping("/updateTotalKm")
+    @PreAuthorize("hasRole('ADMIN')")
     public ResponseEntity<CKm> updateTotalKm() {
         CKm updatedKm = donationService.updateTotalKm();
         return new ResponseEntity<>(updatedKm, HttpStatus.OK);

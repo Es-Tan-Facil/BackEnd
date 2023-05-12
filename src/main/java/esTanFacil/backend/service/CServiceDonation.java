@@ -61,7 +61,6 @@ public class CServiceDonation {
     }
 
 
-
     public CKm updateTotalKm() {
         int totalKm = getTotalKmDonated();
         Optional<CKm> existingKm = kmRepository.findById(1L);
