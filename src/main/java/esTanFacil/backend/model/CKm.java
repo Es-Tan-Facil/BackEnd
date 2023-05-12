@@ -2,7 +2,7 @@ package esTanFacil.backend.model;
 
 import jakarta.persistence.*;
 import lombok.*;
-import java.util.List;
+
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -16,10 +16,9 @@ public class CKm {
 
     private int totalKm;
 
-
-
-
-
+    public void updateTotalKm(int km) {
+        this.totalKm += km;
+    }
 
 }
 

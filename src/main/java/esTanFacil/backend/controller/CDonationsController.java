@@ -21,8 +21,6 @@ public class CDonationsController {
     private CServiceDonation donationService;
 
 
-
-
     @GetMapping("")
     public List<CDonations> getAllDonations() {
         return donationService.getAllDonations();
@@ -63,4 +61,16 @@ public class CDonationsController {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
     }
+
+    @GetMapping("/total-km-donated")
+    public int getTotalKmDonated() {
+        return donationService.getTotalKmDonated();
+    }
+
+    @PutMapping("/updateTotalKm")
+    public ResponseEntity<CKm> updateTotalKm() {
+        CKm updatedKm = donationService.updateTotalKm();
+        return new ResponseEntity<>(updatedKm, HttpStatus.OK);
+    }
+
 }
