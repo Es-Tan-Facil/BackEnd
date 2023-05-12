@@ -32,7 +32,6 @@ public class CServiceDonation {
             CDonations updatedDonation = existingDonation.get();
             updatedDonation.setName(donation.getName());
             updatedDonation.setKmDonated(donation.getKmDonated());
-            updatedDonation.setCkm(donation.getCkm());
             return donationsRepository.save(updatedDonation);
         } else {
             return null;
