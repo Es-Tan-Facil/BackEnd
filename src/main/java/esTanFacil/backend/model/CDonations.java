@@ -1,8 +1,12 @@
 package esTanFacil.backend.model;
 
 import jakarta.persistence.*;
+import lombok.*;
 
-
+@Setter
+@Getter
+@NoArgsConstructor
+@AllArgsConstructor
 @Entity
 public class CDonations {
     @Id
@@ -13,9 +17,6 @@ public class CDonations {
 
     private int kmDonated;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "add_km_donated_id")
-    private int addKm;
 
 }
 

@@ -16,8 +16,6 @@ public class CKm {
 
     private int totalKm;
 
-    @OneToMany(mappedBy = "addKm")
-    private List<CDonations> donations;
 
 
 
