@@ -24,8 +24,5 @@ public class CDonations {
     private int kmDonated;
 
 
-
-
-
 }
 

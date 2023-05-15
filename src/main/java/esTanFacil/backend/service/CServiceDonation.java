@@ -1,7 +1,9 @@
 package esTanFacil.backend.service;
 
 import esTanFacil.backend.model.CDonations;
+import esTanFacil.backend.model.CKm;
 import esTanFacil.backend.repositories.IDonations;
+import esTanFacil.backend.repositories.IKm;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.util.ArrayList;
@@ -12,7 +14,10 @@ import java.util.Optional;
 public class CServiceDonation {
 
     @Autowired
-    private IDonations iDonations;
+    private  IDonations iDonations;
+
+    @Autowired
+    private IKm iKm;
 
 
     public void createDonation(CDonations donations) {
@@ -42,6 +47,30 @@ public class CServiceDonation {
 
 
     }
+
+    public int sumKmDonated() {
+        List<CDonations> donations = readDonation();
+        int totalKmDonated = 0;
+        for (CDonations donation : donations) {
+            totalKmDonated += donation.getKmDonated();
+        }
+        return totalKmDonated;
+    }
+
+    public void updateTotalKmDonated() {
+        int totalKmDonated = sumKmDonated();
+        List<CKm> totalKmList = iKm.findAll();
+        if (totalKmList.isEmpty()) {
+            CKm newTotalKm = new CKm(1L, totalKmDonated);
+            iKm.save(newTotalKm);
+        } else {
+            CKm totalKm = totalKmList.get(0);
+            totalKm.setTotalKm(totalKmDonated);
+            iKm.save(totalKm);
+        }
+    }
+
+
 
 
 

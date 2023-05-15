@@ -34,6 +34,7 @@ public class CDonationsController {
     @PreAuthorize("hasRole('ADMIN')")
     public void createDonation(@RequestBody CDonations donations){
         cServiceDonation.createDonation(donations);
+        cServiceDonation.updateTotalKmDonated();
 
     }
 
@@ -41,6 +42,7 @@ public class CDonationsController {
     @PreAuthorize("hasRole('ADMIN')")
     public void updateDonation(@RequestBody CDonations donations,@PathVariable("id")Long id){
         cServiceDonation.updateDonation(donations,id);
+        cServiceDonation.updateTotalKmDonated();
 
     }
 
@@ -48,9 +50,18 @@ public class CDonationsController {
     @PreAuthorize("hasRole('ADMIN')")
     public void deleteDonation(@PathVariable("id")Long id){
         cServiceDonation.deleteDonation(id);
+        cServiceDonation.updateTotalKmDonated();
 
 
     }
+
+    @GetMapping("/total-km-donated")
+    public int getTotalKmDonated() {
+        return cServiceDonation.sumKmDonated();
+    }
+
+
+
 
 
 
