@@ -57,18 +57,8 @@ public class CServiceDonation {
         return totalKmDonated;
     }
 
-    public void updateTotalKmDonated() {
-        int totalKmDonated = sumKmDonated();
-        List<CKm> totalKmList = iKm.findAll();
-        if (totalKmList.isEmpty()) {
-            CKm newTotalKm = new CKm(1L, totalKmDonated);
-            iKm.save(newTotalKm);
-        } else {
-            CKm totalKm = totalKmList.get(0);
-            totalKm.setTotalKm(totalKmDonated);
-            iKm.save(totalKm);
-        }
-    }
+
+
 
 
 
