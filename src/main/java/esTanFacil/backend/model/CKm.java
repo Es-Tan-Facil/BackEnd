@@ -18,9 +18,8 @@ public class CKm {
     @Column (name = "totalKm", nullable = false)
     private int totalKm;
 
-    public void updateTotalKm(int km) {
-        this.totalKm += km;
-    }
+
+
 
 }
 

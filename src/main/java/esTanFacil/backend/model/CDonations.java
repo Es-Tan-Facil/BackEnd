@@ -2,6 +2,10 @@ package esTanFacil.backend.model;
 
 import jakarta.persistence.*;
 import lombok.*;
+import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.annotation.LastModifiedDate;
+
+import java.time.LocalDateTime;
 
 @Setter
 @Getter
@@ -18,6 +22,8 @@ public class CDonations {
     private String name;
     @Column (name = "kmDonated", nullable = false)
     private int kmDonated;
+
+
 
 
 
