@@ -1,6 +1,10 @@
 package esTanFacil.backend;
 
+
 import esTanFacil.backend.controller.AuthControllerTest;
+import esTanFacil.backend.controller.CDonationsControllerTest;
+
+import esTanFacil.backend.controller.CNewsController;
 import esTanFacil.backend.model.CDonationsTest;
 import esTanFacil.backend.model.CKmTest;
 import esTanFacil.backend.model.CNewsTest;
@@ -20,6 +24,8 @@ import org.junit.runner.RunWith;
 @DisplayName("Backend Application Tests")
 @SelectClasses({
 		AuthControllerTest.class,
+		CNewsController.class,
+		CDonationsControllerTest.class,
 		CDonationsTest.class,
 		CKmTest.class,
 		CNewsTest.class,
