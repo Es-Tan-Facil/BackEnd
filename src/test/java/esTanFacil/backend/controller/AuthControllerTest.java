@@ -27,6 +27,8 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.junit.jupiter.api.Test;
+
 
 import java.util.*;
 import java.util.stream.Collectors;
@@ -34,8 +36,9 @@ import java.util.stream.Collectors;
 import static org.junit.Assert.assertEquals;
 import static org.mockito.Mockito.when;
 
-@RunWith(MockitoJUnitRunner.class)
-public class AuthControllerTest {
+@ExtendWith(MockitoExtension.class)
+public
+class AuthControllerTest {
 
     @Mock
     private AuthenticationManager authenticationManager;
