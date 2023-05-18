@@ -3,7 +3,6 @@ package esTanFacil.backend.service;
 import esTanFacil.backend.model.CDonations;
 import esTanFacil.backend.repositories.IDonations;
 import esTanFacil.backend.repositories.IKm;
-import esTanFacil.backend.service.CServiceDonation;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
@@ -17,11 +16,7 @@ import java.util.Optional;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.Mockito.*;
 
-import org.junit.jupiter.api.Test;
-
-import static org.junit.jupiter.api.Assertions.*;
-
-class CServiceDonationTest {
+public class CServiceDonationTest {
 
     @Mock
     private IDonations iDonations;

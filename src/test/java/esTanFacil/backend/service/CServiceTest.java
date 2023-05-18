@@ -15,7 +15,7 @@ import java.util.Optional;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.Mockito.*;
 
-class CServiceTest {
+public class CServiceTest {
 
     @Mock
     private INews iNews;

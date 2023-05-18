@@ -6,7 +6,7 @@ import java.time.LocalDate;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class CNewsTest {
+public class CNewsTest {
 
     @Test
     void getId() {

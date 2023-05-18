@@ -1,10 +1,7 @@
 package esTanFacil.backend.service;
 
-import esTanFacil.backend.model.CDonations;
 import esTanFacil.backend.model.CKm;
 import esTanFacil.backend.repositories.IKm;
-import esTanFacil.backend.service.CServiceDonation;
-import esTanFacil.backend.service.CServiceKm;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
@@ -18,7 +15,7 @@ import java.util.Optional;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.Mockito.*;
 
-class CServiceKmTest {
+public class CServiceKmTest {
 
     @Mock
     private IKm iKm;
