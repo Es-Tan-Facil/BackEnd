@@ -7,7 +7,6 @@ import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
-import org.springframework.security.test.context.support.WithMockUser;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 
@@ -73,7 +72,6 @@ public class CDonationsControllerTest {
     }
 
     @Test
-    @WithMockUser(roles = "ADMIN")
     public void testCreateDonation() throws Exception {
         // Arrange
         CDonations donation = new CDonations();
