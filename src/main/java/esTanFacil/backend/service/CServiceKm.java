@@ -15,8 +15,8 @@ public class CServiceKm {
     @Autowired
     private IKm iKm;
 
-   @Autowired
-   private CServiceDonation cServiceDonation;
+    @Autowired
+    private CServiceDonation cServiceDonation;
 
 
     public void updateTotalKmDonated() {
@@ -33,9 +33,7 @@ public class CServiceKm {
     }
 
     public int readTotalKms() {
-  Optional<CKm> cKm = iKm.findById(1L);
+        Optional<CKm> cKm = iKm.findById(1L);
         return cKm.get().getTotalKm();
     }
-
-
 }
